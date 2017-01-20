@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_SIGN_IN) {
-            if (requestCode == RESULT_OK) {
+            if (resultCode == RESULT_OK) {
                 Toast.makeText(MainActivity.this, "Signed In!", Toast.LENGTH_SHORT).show();
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(MainActivity.this, "Sign In Cancelled!", Toast.LENGTH_SHORT).show();

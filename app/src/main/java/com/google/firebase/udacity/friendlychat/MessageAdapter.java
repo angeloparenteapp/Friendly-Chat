@@ -1,7 +1,9 @@
 package com.google.firebase.udacity.friendlychat;
 
 import android.app.Activity;
+import android.app.Notification;
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -39,9 +41,19 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         } else {
             messageTextView.setVisibility(View.VISIBLE);
             photoImageView.setVisibility(View.GONE);
-            messageTextView.setText(message.getText());
+            if (message.getName().equals("Angelo Parente")) {
+                messageTextView.setGravity(Gravity.END);
+                messageTextView.setText(message.getText());
+            } else {
+                messageTextView.setText(message.getText());
+            }
         }
-        authorTextView.setText(message.getName());
+        if (message.getName().equals("Angelo Parente")) {
+            authorTextView.setGravity(Gravity.END);
+            authorTextView.setText(message.getName());
+        }else {
+            authorTextView.setText(message.getName());
+        }
 
         return convertView;
     }
