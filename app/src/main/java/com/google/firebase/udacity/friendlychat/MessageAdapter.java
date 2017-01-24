@@ -43,17 +43,17 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
             photoImageView.setVisibility(View.GONE);
             if (message.getName().equals("Angelo Parente")) {
                 messageTextView.setGravity(Gravity.END);
-                messageTextView.setText(message.getText());
             } else {
-                messageTextView.setText(message.getText());
+                messageTextView.setGravity(Gravity.START);
             }
+            messageTextView.setText(message.getText());
         }
         if (message.getName().equals("Angelo Parente")) {
             authorTextView.setGravity(Gravity.END);
-            authorTextView.setText(message.getName());
-        }else {
-            authorTextView.setText(message.getName());
+        } else {
+            authorTextView.setGravity(Gravity.START);
         }
+        authorTextView.setText(message.getName());
 
         return convertView;
     }
